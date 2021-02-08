@@ -1,5 +1,5 @@
 defmodule PortMidi.Listeners do
-  def start_link do
+  def start_link(_arg) do
     GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
   end
 
@@ -14,6 +14,17 @@ defmodule PortMidi.Listeners do
 
   # Server implementation
   #######################
+
+
+    def child_spec(opts) do
+      %{
+        id: __MODULE__,
+        start: {__MODULE__, :start_link, [opts]},
+        type: :worker,
+        restart: :permanent,
+        shutdown: 500
+      }
+    end
 
   def init(:ok), do:
     {:ok, {%{}, %{}}}

@@ -17,10 +17,9 @@ defmodule PortMidi do
     input devices.
   """
   def start(_type, _args) do
-    import Supervisor.Spec, warn: false
 
     children = [
-      worker(Listeners, [])
+      Listeners
     ]
 
     opts = [strategy: :one_for_one, name: PortMidi.Supervisor]

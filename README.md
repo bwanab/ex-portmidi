@@ -1,5 +1,7 @@
 # ex-portmidi
 
+This is a fork of https://github.com/Kovak/ex-portmidi, which is a fork of the original https://github.com/lucidstack/ex-portmidi. Kovac fixed a couple of bugs which haven't been pulled into the original. The repository fixes complaints from more modern elixir compiler versions.
+
 **Need to catch up?** Have a look at the [changelog](/CHANGELOG.md)! 🚀
 
 ex-portmidi is a wrapper for the [PortMidi C library](http://portmedia.sourceforge.net/portmidi/),
